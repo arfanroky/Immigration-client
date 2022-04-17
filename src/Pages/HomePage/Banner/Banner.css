@@ -1,0 +1,19 @@
+.img-box{
+    position: relative;
+}
+
+.info{
+    width: 550px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.info > h3{
+    font-size: 3rem;
+}
+
+

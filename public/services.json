@@ -1,0 +1,13 @@
+[
+    {"id":1, "name":"X-Ray", "desc":"An X-ray is a quick, painless test that produces images of the structures inside your body — particularly your bones. X-ray beams pass through your body, and they are absorbed in different amounts depending on the density of the material they pass through.","img":"https://images.pexels.com/photos/8376148/pexels-photo-8376148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "price":"$325.00"},
+
+    {"id":2, "name":"Magnetic Resonance Imaging", "desc":"Magnetic resonance imaging (MRI) is a medical imaging technique used in radiology to form pictures of the anatomy and the physiological processes of the body. MRI scanners use strong magnetic fields, magnetic field gradients, and radio waves to generate images of the organs in the body." , "img":"https://images.pexels.com/photos/4226124/pexels-photo-4226124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","price":"$435.00"},
+
+    {"id":3, "name":"Computer Tomography", "desc": "A computerized tomography (CT) scan combines a series of X-ray images taken from different angles around your body and uses computer processing to create cross-sectional images (slices) of the bones, blood vessels and soft tissues inside your body. ", "img":"https://images.pexels.com/photos/7089629/pexels-photo-7089629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "price":"$315.00"},
+
+    {"id":4, "name":"Laboratory Tests", "desc": "Laboratory tests check a sample of your blood, urine, or body tissues. A technician or your doctor analyzes the test samples to see if your results fall within the normal range. ", "img":"https://images.pexels.com/photos/4031323/pexels-photo-4031323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "price":"$90.00"},
+
+    {"id":5, "name":"Ultrasound Imaging", "desc": "Ultrasound imaging (sonography) uses high-frequency sound waves to view inside the body. Because ultrasound images are captured in real-time, they can also show movement of the body's internal organs as well as blood flowing through the blood vessels.", "price":"$285.00", "img":"https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+
+    {"id":6, "name":"Pregnancy Care Service", "desc": "Talk with your provider about any medicines you take. This includes over-the-counter medicines. You should only take medicines your provider says are safe to take while you are pregnant.", "price":"$530.00", "img":"https://images.pexels.com/photos/3845757/pexels-photo-3845757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}
+]
