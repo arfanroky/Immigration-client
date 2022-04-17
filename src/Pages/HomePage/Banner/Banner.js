@@ -20,7 +20,7 @@ const Banner = () => {
         <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
-          className="d-block w-100 img-box opacity-50"
+          className="d-block w-100 img-box opacity-50" style={{height:'648px'}}
           src="https://metropolitanhost.com/themes/themeforest/react/docfind/assets/img/home-1/1920x1280.jpg"
           alt="First slide"
         />
@@ -31,7 +31,7 @@ const Banner = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100  img-box"
+          className="d-block w-100 h-100 img-box"
           src={banner2}
           alt="Second slide"
         />

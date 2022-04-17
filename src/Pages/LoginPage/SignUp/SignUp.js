@@ -2,39 +2,45 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const SignUp = () => {
-    const nameRef = useRef('')
-    const emailRef = useRef('')
-    const passwordRef = useRef('')
-    // const confirmPasswordRef = useRef('')
+  const nameRef = useRef('')
+  const emailRef = useRef('')
+  const passwordRef = useRef('')
+  
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    Createerror,
+  ] = useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending, Sendingerror] = useSendEmailVerification(auth);
 
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        Createerror,
-      ] = useCreateUserWithEmailAndPassword(auth);
-      const [sendEmailVerification, sending, Sendingerror] = useSendEmailVerification(auth);
-
-
-    const handleSubmit = event => {
-        event.preventDefault();
-
-        const name = nameRef.current.value;
-        const email = emailRef?.current.value;
-        const password = passwordRef?.current.value;
-        // const confrimPassword = confirmPasswordRef.current.value;
-
-        createUserWithEmailAndPassword(email, password)
-        // sendEmailVerification(email, password)
+  const navigate = useNavigate();
 
 
-    }
 
-    return (
-        <div className="container w-50 mx-auto">
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const name = nameRef.current.value;
+    const email = emailRef?.current.value;
+    const password = passwordRef?.current.value;
+
+    createUserWithEmailAndPassword(email, password)
+    sendEmailVerification(email, password)
+
+
+  }
+
+  const navigateSignIn = () => {
+    navigate('/sign-in')
+  }
+
+  return (
+    <div className="container w-50 mx-auto">
       <h1 className="text-primary text-center my-2">Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
@@ -63,34 +69,24 @@ const SignUp = () => {
           />
         </Form.Group>
         <Button
-         variant="primary w-50 mx-auto d-block mb-2" type="submit">
+          variant="primary w-50 mx-auto d-block mb-2" type="submit">
           Sign Up
         </Button>
       </Form>
 
-      {/* <p>
-        New to Genius Car?{' '}
+      <p>
+        Already Have an account?
         <Link
           className="text-danger pe-auto text-decoration-none"
-          to="/register"
-          onClick={navigateRegister}
+          to="/sign-in"
+          onClick={navigateSignIn}
         >
-          Please Register
+          Please Login
         </Link>
-      </p> */}
-      {/* <p>
-        Forgot password?
-        <button
-          className="text-primary pe-auto text-decoration-none btn btn-link"
-          onClick={resetPassword}
-        >
-          Reset Password
-        </button>
       </p>
-      <SocialLogin />
-      <ToastContainer /> */}
+
     </div>
-    );
+  );
 };
 
 export default SignUp;

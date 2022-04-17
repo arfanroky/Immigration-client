@@ -6,11 +6,9 @@ import {
 } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// import SocialLogin from '../SocialLogin/SocialLogin';
-// import { ToastContainer, toast } from 'react-toastify';
-
-// import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
   const emailRef = useRef('');
@@ -36,21 +34,21 @@ const SignIn = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  // const navigateRegister = (event) => {
-  //   navigate('/register');
-  // };
+  const navigateSignUp = (event) => {
+    navigate('/sign-up');
+  };
 
-  // const resetPassword = async () => {
-  //   const email = emailRef.current.value;
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
 
-  //   if (email) {
-  //     await sendPasswordResetEmail(email);
-  //     toast('send email');
-  //   }
-  //   else{
-  //     toast('please enter your email ')
-  //   }
-  // };
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast('send email');
+    }
+    else{
+      toast('please enter your email ')
+    }
+  };
 
   return (
     <div className="container w-50 mx-auto">
@@ -80,17 +78,17 @@ const SignIn = () => {
         </Button>
       </Form>
 
-      {/* <p>
-        New to Genius Car?{' '}
+      <p>
+        New Here?
         <Link
           className="text-danger pe-auto text-decoration-none"
-          to="/register"
-          onClick={navigateRegister}
+          to="/sign-up"
+          onClick={navigateSignUp}
         >
-          Please Register
+          Please Sign Up
         </Link>
-      </p> */}
-      {/* <p>
+      </p>
+       <p>
         Forgot password?
         <button
           className="text-primary pe-auto text-decoration-none btn btn-link"
@@ -99,8 +97,8 @@ const SignIn = () => {
           Reset Password
         </button>
       </p>
-      <SocialLogin />
-      <ToastContainer /> */}
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

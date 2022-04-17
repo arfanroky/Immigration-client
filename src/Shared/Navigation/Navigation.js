@@ -1,38 +1,51 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import './Navigation.css';
+import CustomLink from '../CustomLink/CustomLink';
 
 const Navigation = () => {
 
-  // const [user] = useAuthState();
+  const [user] = useAuthState(auth)
+
+  const handleSignOut = () => {
+    signOut(auth);
+  }
+
+
 
   return (
     <Navbar bg="light" sticky='top' expand="lg">
       <Container>
-        <Link className='' to='/'>
-        
-        Treatment
+        <Link className='active-link' to='/'>
+
+          Treatment
         </Link>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Link to="/">
+          <Nav className="ms-auto nav-list">
+            <CustomLink to="/">
               Home
-            </Link>
-            <Link to="/services">
+            </CustomLink>
+            <CustomLink to="/services">
               Services
-            </Link>
-            <Link to="/about">
-               About 
-              </Link>
-            <Link to="/sign-in">
-            Sign In
-            </Link>
-            <Link to="/sign-up">
-             {/* {user? " Sign Up" : "Sign Out"} */}
-            </Link>
+            </CustomLink>
+            <CustomLink to="/about">
+              About
+            </CustomLink>
+            <CustomLink to="/sign-in">
+              Sign In
+            </CustomLink>
+            {
+              user ? <button onClick={handleSignOut} className='signOut-btn btn-sm btn-danger'>
+                Sign Out
+              </button> :
+                <CustomLink to='/sign-up'>Sign Up</CustomLink>
+            }
           </Nav>
         </Navbar.Collapse>
 
