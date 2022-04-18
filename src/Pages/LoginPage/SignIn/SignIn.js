@@ -3,11 +3,14 @@ import { Button, Form } from 'react-bootstrap';
 import {
   useSignInWithEmailAndPassword,
   useSendPasswordResetEmail,
+  useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import './SignIn.css';
 
 
 const SignIn = () => {
@@ -34,6 +37,7 @@ const SignIn = () => {
     signInWithEmailAndPassword(email, password);
   };
 
+
   const navigateSignUp = (event) => {
     navigate('/sign-up');
   };
@@ -51,11 +55,10 @@ const SignIn = () => {
   };
 
   return (
-    <div className="container w-50 mx-auto">
-      <h1 className="text-primary text-center my-2">Sign In</h1>
-      <Form onSubmit={handleSubmit}>
+    <div className="container mt-5">
+      <h1 className="text-danger text-center my-2">Sign In</h1>
+      <Form className="sign-in-form" onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
           <Form.Control
             ref={emailRef}
             type="email"
@@ -65,7 +68,6 @@ const SignIn = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
           <Form.Control
             ref={passwordRef}
             type="password"
@@ -73,15 +75,13 @@ const SignIn = () => {
             required
           />
         </Form.Group>
-        <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
+        <Button variant="danger w-50 mx-auto d-block mb-2" type="submit">
           Sign In
         </Button>
-      </Form>
-
-      <p>
-        New Here?
-        <Link
-          className="text-danger pe-auto text-decoration-none"
+      <div className="text-center p-0 m-0">
+      <p className='p-0 m-0'>
+        New Here? <Link
+          className="text-danger  text-decoration-none"
           to="/sign-up"
           onClick={navigateSignUp}
         >
@@ -91,13 +91,18 @@ const SignIn = () => {
        <p>
         Forgot password?
         <button
-          className="text-primary pe-auto text-decoration-none btn btn-link"
+          className="text-danger pe-auto text-decoration-none btn btn-link"
           onClick={resetPassword}
         >
           Reset Password
         </button>
       </p>
+      </div>
+      </Form>
 
+
+
+      <SocialLogin></SocialLogin>
       <ToastContainer></ToastContainer>
     </div>
   );

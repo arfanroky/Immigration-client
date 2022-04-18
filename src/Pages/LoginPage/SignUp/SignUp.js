@@ -1,25 +1,34 @@
 
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword} from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 import auth from '../../../firebase.init';
+import Loading from '../../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import './SignUp.css';
 
 const SignUp = () => {
   const nameRef = useRef('')
   const emailRef = useRef('')
   const passwordRef = useRef('')
   
-  const [
-    createUserWithEmailAndPassword,
-    user,
-    loading,
-    Createerror,
-  ] = useCreateUserWithEmailAndPassword(auth);
-  const [sendEmailVerification, sending, Sendingerror] = useSendEmailVerification(auth);
-
+  const [createUserWithEmailAndPassword, user, loading, error] =
+  useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
   const navigate = useNavigate();
 
+  const location = useLocation();
+  let from = location.state?.from?.pathname || '/';
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+ 
+
+  if(loading ){
+    return <Loading></Loading>
+  }
 
 
   const handleSubmit = event => {
@@ -30,19 +39,18 @@ const SignUp = () => {
     const password = passwordRef?.current.value;
 
     createUserWithEmailAndPassword(email, password)
-    sendEmailVerification(email, password)
-
-
   }
 
   const navigateSignIn = () => {
     navigate('/sign-in')
   }
 
+ 
+
   return (
-    <div className="container w-50 mx-auto">
-      <h1 className="text-primary text-center my-2">Sign Up</h1>
-      <Form onSubmit={handleSubmit}>
+    <div className="container  mt-5">
+      <h1 className="text-danger text-center my-2">Sign Up</h1>
+      <Form className='sign-up-form' onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Control
             ref={nameRef}
@@ -69,22 +77,21 @@ const SignUp = () => {
           />
         </Form.Group>
         <Button
-          variant="primary w-50 mx-auto d-block mb-2" type="submit">
+          variant="danger w-50 mx-auto d-block mb-2" type="submit">
           Sign Up
         </Button>
-      </Form>
-
-      <p>
-        Already Have an account?
-        <Link
-          className="text-danger pe-auto text-decoration-none"
+        <p className='text-center'>
+        Already Have an account? <Link
+          className="text-danger text-decoration-none"
           to="/sign-in"
-          onClick={navigateSignIn}
-        >
+          onClick={navigateSignIn}>
           Please Login
         </Link>
       </p>
+      </Form>
 
+  
+<SocialLogin></SocialLogin>
     </div>
   );
 };
