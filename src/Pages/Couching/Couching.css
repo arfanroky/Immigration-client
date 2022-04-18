@@ -1,0 +1,10 @@
+
+.couching-card{
+    transition: all .5s ease-in-out;
+}
+
+.couching-card:hover{
+    background-color: rgba(255, 0, 0, 0.421);
+    color: white;
+    transform: scale(.9);
+}

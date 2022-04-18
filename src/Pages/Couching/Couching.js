@@ -15,7 +15,7 @@ const Couching = () => {
                 </div>
                 <div className="col">
 
-                    <div className="text-center shadow rounded">
+                    <div className="text-center shadow rounded couching-card">
                         <p className="w-50 mx-auto">
                             <AcademicCapIcon></AcademicCapIcon>
                         </p>
@@ -25,7 +25,7 @@ const Couching = () => {
 
                 <div className="col-1 ">
 
-                    <div className="text-center shadow rounded">
+                    <div className="text-center shadow rounded couching-card">
                         <p className="w-50 mx-auto">
                             <AnnotationIcon></AnnotationIcon>
                         </p>
@@ -33,7 +33,7 @@ const Couching = () => {
                     </div>
                 </div>
                 <div className="col">
-                    <div className="text-center shadow rounded">
+                    <div className="text-center shadow rounded couching-card">
                         <p className="w-50 mx-auto">
                             <LibraryIcon></LibraryIcon>
                         </p>
@@ -41,7 +41,7 @@ const Couching = () => {
                     </div>
                 </div>
                 <div className="col">
-                    <div className="text-center shadow rounded">
+                    <div className="text-center shadow rounded couching-card">
 
                         <p className='w-50 mx-auto'>
                             <DeviceTabletIcon></DeviceTabletIcon>
@@ -50,7 +50,7 @@ const Couching = () => {
                     </div>
                 </div>
                 <div className="col">
-                    <div className='text-center shadow rounded'>
+                    <div className='text-center shadow rounded couching-card'>
                         <p className='w-50 mx-auto'><BookOpenIcon></BookOpenIcon></p>
                         <h3 className='pb-3'>Scholastic Apti</h3>
                     </div>
