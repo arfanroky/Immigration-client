@@ -1,5 +1,4 @@
 # Live Site Link
-
 Project Live Site [Live Site](https://borrow-741c0.web.app/).
 
 ## What have inside the project..
@@ -10,7 +9,7 @@ Project Live Site [Live Site](https://borrow-741c0.web.app/).
 - blogs section
 - when you clicked checkout button then you you should be login
 - couching section has
-- sing in and sing up page 
+- sign in and sign up page 
  
 
 ## Technology Used
