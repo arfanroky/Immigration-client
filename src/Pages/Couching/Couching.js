@@ -1,17 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import './Couching.css';
-import { AcademicCapIcon, AnnotationIcon, BeakerIcon, BookOpenIcon, DeviceTabletIcon, LibraryIcon } from '@heroicons/react/solid'
+import { AcademicCapIcon, AnnotationIcon, BookOpenIcon, DeviceTabletIcon, LibraryIcon } from '@heroicons/react/solid'
 
 const Couching = () => {
     return (
-        <div className='container py-3'>
+        <div className='container py-5'>
             <h1 className='text-center my-5'>Couching</h1>
             <div className='row row-cols-md-2 row-cols-1 row-cols-lg-3 g-4'>
                 <div className="col">
                     <p className='fs-3 text-danger'>Coaching</p>
                     <h1>Migrate Is Your Trusted <br /> Instructing Center</h1>
-                    <p>We give master group to make extraordinary incentive for migration. Our confirmed and solid Immigration Consultant experts can assist you with getting a positive choice on your case. We give migration benefits in every single diverse region of nations.</p>
+                    <p>I give master group to make extraordinary incentive for migration. My confirmed and solid Immigration Consultant experts can assist you with getting a positive choice on your case. I give migration benefits in every single diverse region of nations.</p>
                 </div>
                 <div className="col">
 
