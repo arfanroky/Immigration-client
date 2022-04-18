@@ -11,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import './SignIn.css';
+import Loading from '../../../Shared/Loading/Loading';
 
 
 const SignIn = () => {
@@ -79,6 +80,14 @@ const SignIn = () => {
           Sign In
         </Button>
       <div className="text-center p-0 m-0">
+      <p style={{color:'red', margin:'.5rem 0'}}>
+                {error?.message}
+            </p>
+          <p className="text-center">
+          {
+              (loading || sending) && <Loading></Loading>
+            }
+          </p>
       <p className='p-0 m-0'>
         New Here? <Link
           className="text-danger  text-decoration-none"

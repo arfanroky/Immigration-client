@@ -25,12 +25,6 @@ const SignUp = () => {
     navigate(from, { replace: true });
   }
  
-
-  if(loading ){
-    return <Loading></Loading>
-  }
-
-
   const handleSubmit = event => {
     event.preventDefault();
 
@@ -80,14 +74,20 @@ const SignUp = () => {
           variant="danger w-50 mx-auto d-block mb-2" type="submit">
           Sign Up
         </Button>
-        <p className='text-center'>
-        Already Have an account? <Link
-          className="text-danger text-decoration-none"
-          to="/sign-in"
-          onClick={navigateSignIn}>
-          Please Login
-        </Link>
-      </p>
+   <div className="text-center">
+   <p style={{color:'red', margin:'.5rem 0', }}>{error?.message}</p>
+       {
+         loading && <Loading></Loading>
+       }
+       <p className='text-center'>
+       Already Have an account? <Link
+         className="text-danger text-decoration-none"
+         to="/sign-in"
+         onClick={navigateSignIn}>
+         Please Login
+       </Link>
+     </p>
+   </div>
       </Form>
 
   

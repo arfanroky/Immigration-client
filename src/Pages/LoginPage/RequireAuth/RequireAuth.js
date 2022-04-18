@@ -11,7 +11,11 @@ const RequireAuth = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <Loading/>
+        return <div className="d-flex justify-content-center align-items-center w-100 " style={{height:'100vh'}} >
+            <p style={{fontSize:'4rem'}} className='fw-bold'>
+          Loading . . . <Loading></Loading>
+            </p>
+        </div>
     }
 
     if(!user){

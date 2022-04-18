@@ -36,6 +36,9 @@ const Navigation = () => {
             <CustomLink to="/about">
               About
             </CustomLink>
+            <CustomLink to="/blogs">
+              Blogs
+            </CustomLink>
             <CustomLink to="/sign-in">
               Sign In
             </CustomLink>

@@ -10,6 +10,8 @@ import RequireAuth from './Pages/LoginPage/RequireAuth/RequireAuth';
 import NotFound from './Shared/NotFound/NotFound';
 import Footer from './Shared/Footer/Footer';
 import Checkout from './Pages/Checkout/Checkout';
+import About from './Pages/About/About';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
     <Routes>
     <Route path='/' element={<Home/>}></Route>
     <Route path='/services' element={<Services/>}></Route>
+    <Route path='/about' element={<About/>}></Route>
+    <Route path='/blogs' element={<Blogs/>}></Route>
     <Route path='/sign-in' element={<SignIn/>}></Route>
     <Route path='/sign-up' element={<SignUp/>}></Route>
     <Route path='/checkout' element={
