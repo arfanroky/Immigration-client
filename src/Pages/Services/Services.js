@@ -12,9 +12,16 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
 
+
     return (
         <div className='container py-5'>
-            <h1 className='my-5 text-center'>Services</h1>
+            <div className='my-5 text-center'>
+                <h5>CHOOSE YOUR CATOGARY VISA</h5>
+                <h1 className='fs-1 fw-bold'>With Migrate Immigration <br />
+                Visa
+                    Service Provide.
+                </h1>
+            </div>
 
             <Row xs={1} md={2} lg={3} className="g-4">
                 {

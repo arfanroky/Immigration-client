@@ -21,8 +21,7 @@ const Navigation = () => {
     <Navbar bg="light" sticky='top' expand="lg">
       <Container>
         <Link className='active-link' to='/'>
-
-          Treatment
+          Migrate
         </Link>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

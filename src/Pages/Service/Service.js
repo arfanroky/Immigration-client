@@ -12,7 +12,7 @@ const Service = ({ service }) => {
 
         <Col>
             <Card style={{ height: '550px', position: 'relative' }}>
-                <Card.Img variant="top" src={img} />
+                <Card.Img variant="top" src={img} style={{width:'388px', height:'283px'}}/>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
