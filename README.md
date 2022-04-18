@@ -9,7 +9,8 @@ Project Live Site [Live Site](https://borrow-741c0.web.app/).
 - service Section 
 - blogs section
 - when you clicked checkout button then you you should be login
-- couching section has 
+- couching section has
+- sing in and sing up page 
  
 
 ## Technology Used
